@@ -7,7 +7,7 @@
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-    int to = 1,bi = 1,ra = 1;
+    int to = 1,bi = 1,ra = 1,ca = 1;
 
     //exibição do jogo e entrada de dados
     printf("Bem vindo ao jogo de xadrez!\n");
@@ -40,7 +40,18 @@ int main() {
     }
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    //Estrutura repetição aninhada do cavalor com while e for
+    printf("\nmovimento do Cavlo\n");
+    while (ca--) {
+        for (int i = 0; i < 2; i++) {
+            printf("Baixo\n");
+        }
+
+        for (int j = 0; j < 1; j++) {
+            printf("Esquerda\n");
+        }
+    }
+
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.

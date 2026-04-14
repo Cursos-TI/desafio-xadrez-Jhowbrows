@@ -4,61 +4,73 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-    int to = 1,bi = 1,ra = 1,ca = 1;
+//Movimentação da Torre com recursividade
+void moverTorre(int to){
+    if (to > 0){
+        printf("Direita\n");
+        moverTorre(to - 1);
+    }
+}
 
-    //exibição do jogo e entrada de dados
+//Movimentação do bispo com recursividade
+void moverBispo (int bi) {
+    if (bi > 0) {
+        printf("Cima,Direita\n");
+        moverBispo(bi - 1);
+    }
+}
+
+/* Movimentação do bispo com loop aninhado
+    void moverBispo(int casas) {
+        for (int i = 0; i < casas; i++) { // vertical
+            for (int j = 0; j < 1; j++) { // horizontal
+                printf("Cima,Direita\n");
+            }
+        }
+    }
+*/
+
+//Movimentação da Rainha com recursividade
+void moverRainha (int ra) {
+    if (ra > 0){
+        printf("Esquerda\n");
+        moverRainha(ra - 1);
+    }
+}
+
+int main() {
+     //exibição do jogo e entrada de dados
     printf("Bem vindo ao jogo de xadrez!\n");
     
-    // Implementação de Movimentação do Bispo
+    //movimentação pré definida neste desafio
+    
+    printf("Movimento da Torre!\n");
+
+   //Movimento da Torre atravez de recursividade
+    moverTorre(5);
+
     printf("\nMovimento do Bispo!\n");
 
-    //Estrutura de repetição do bispo com do while
-    do {
-        printf("Cima,Direita\n");
-        bi++;
-    } while (bi <= 5);
+    //Movimento do Bispo atravez de recursividade
 
-    // Implementação de Movimentação da Torre
-    printf("\nMovimento da Torre!\n");
-
-    //estrutura de repetição da torre com while
-    while (to <= 5)
-    {
-        printf("Direita\n");
-        to++;
-    }
-
-    // Implementação de Movimentação da Rainha
+    moverBispo(5);
+    
     printf("\nMovimento da Rainha!\n");
 
-    //Estrutura de repetição da rainha com for
-    for(ra = 1; ra <= 8; ra++) {
-        printf("Esquerda\n");
-    }
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    //Estrutura repetição aninhada do cavalor com while e for
+    //Movimento da Rainha atravez de recursividade
+    moverRainha(8);
+
+    //Estrutura repetição complexa aninhada do cavalor com while e for e if
     printf("\nmovimento do Cavlo\n");
-    while (ca--) {
-        for (int i = 0; i < 2; i++) {
-            printf("Baixo\n");
-        }
+    for(int i = 0; i < 2; i++) {
+        printf("Cima\n");
 
-        for (int j = 0; j < 1; j++) {
-            printf("Esquerda\n");
+        for(int j = 0; j <1; j++) {
+            if(i == 1) {
+                printf("Direita\n");
+            }
         }
     }
-
-
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
 
     return 0;
 }
